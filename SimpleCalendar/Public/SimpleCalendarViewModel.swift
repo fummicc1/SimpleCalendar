@@ -11,6 +11,5 @@ import Combine
 
 public protocol SimpleCalendarViewModel: ObservableObject {
     var columnCount: Int { get }
-    var headColumns: [SimpleCalendarItem] { get }
-    
+    var heads: [SimpleCalendarItem] { get }
 }

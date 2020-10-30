@@ -14,7 +14,7 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
     
     private let calendar: Calendar = .init(identifier: .gregorian)
     
-    var headColumns: [SimpleCalendarItem] = (0...6).map { index in
+    var heads: [SimpleCalendarItem] = (0...6).map { index in
         SimpleCalendarItemImpl(date: Date(), text: "\(index)", image: nil)
     }
 }

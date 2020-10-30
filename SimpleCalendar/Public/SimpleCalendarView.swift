@@ -8,10 +8,14 @@
 import Foundation
 import SwiftUI
 
-public struct SimpleCalendarView: View {
+public struct SimpleCalendarView<ViewModel: SimpleCalendarViewModel>: View {
+    @ObservedObject var viewModel: ViewModel
+    
     public var body: some View {
         VStack {
-            Text("Hello World")
+            HStack {
+                
+            }
         }
     }
 }
