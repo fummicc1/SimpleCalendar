@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 public protocol SimpleCalendarItem {
+    var state: SimpleCalendarItemState { get }
     var date: Date { get }
     var text: String { get }
     var image: Image? { get }

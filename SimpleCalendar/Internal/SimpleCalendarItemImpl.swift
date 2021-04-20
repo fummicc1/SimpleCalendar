@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 struct SimpleCalendarItemImpl: SimpleCalendarItem {
+    var state: SimpleCalendarItemState
     var date: Date
     var text: String
     var image: Image?
