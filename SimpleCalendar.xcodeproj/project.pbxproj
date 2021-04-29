@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D34F441C254B929900301336 /* SimpleCalendarItemImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F441B254B929900301336 /* SimpleCalendarItemImpl.swift */; };
-		D3613E81262EFCA40045C03D /* SimpleCalendarItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3613E80262EFCA40045C03D /* SimpleCalendarItemState.swift */; };
-		D3613E85262EFE710045C03D /* SimpleCalendarItemStateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3613E84262EFE710045C03D /* SimpleCalendarItemStateImpl.swift */; };
+		D370263F263ACB02005062DE /* SimpleCalendarEventImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370263E263ACB02005062DE /* SimpleCalendarEventImpl.swift */; };
+		D3702641263ACB26005062DE /* SimpleCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3702640263ACB26005062DE /* SimpleCalendarEvent.swift */; };
+		D3702645263AD397005062DE /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3702644263AD397005062DE /* CalendarModel.swift */; };
+		D3702649263AD590005062DE /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3702648263AD590005062DE /* Month.swift */; };
+		D370264B263AD5C9005062DE /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370264A263AD5C9005062DE /* Year.swift */; };
+		D370264D263AD863005062DE /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370264C263AD863005062DE /* Day.swift */; };
+		D370264F263AD883005062DE /* SimpleCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370264E263AD883005062DE /* SimpleCalendar.swift */; };
 		D3AB84A0254B896B00D92339 /* SimpleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AB8496254B896B00D92339 /* SimpleCalendar.framework */; };
 		D3AB84A5254B896B00D92339 /* SimpleCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB84A4254B896B00D92339 /* SimpleCalendarTests.swift */; };
 		D3AB84A7254B896B00D92339 /* SimpleCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = D3AB8499254B896B00D92339 /* SimpleCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,8 +36,13 @@
 
 /* Begin PBXFileReference section */
 		D34F441B254B929900301336 /* SimpleCalendarItemImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarItemImpl.swift; sourceTree = "<group>"; };
-		D3613E80262EFCA40045C03D /* SimpleCalendarItemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarItemState.swift; sourceTree = "<group>"; };
-		D3613E84262EFE710045C03D /* SimpleCalendarItemStateImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarItemStateImpl.swift; sourceTree = "<group>"; };
+		D370263E263ACB02005062DE /* SimpleCalendarEventImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarEventImpl.swift; sourceTree = "<group>"; };
+		D3702640263ACB26005062DE /* SimpleCalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarEvent.swift; sourceTree = "<group>"; };
+		D3702644263AD397005062DE /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		D3702648263AD590005062DE /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		D370264A263AD5C9005062DE /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
+		D370264C263AD863005062DE /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D370264E263AD883005062DE /* SimpleCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendar.swift; sourceTree = "<group>"; };
 		D3AB8496254B896B00D92339 /* SimpleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AB8499254B896B00D92339 /* SimpleCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleCalendar.h; sourceTree = "<group>"; };
 		D3AB849A254B896B00D92339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 				D3AB84B4254B89CA00D92339 /* Public */,
 				D3AB8499254B896B00D92339 /* SimpleCalendar.h */,
 				D3AB849A254B896B00D92339 /* Info.plist */,
+				D370264E263AD883005062DE /* SimpleCalendar.swift */,
 			);
 			path = SimpleCalendar;
 			sourceTree = "<group>";
@@ -108,7 +119,10 @@
 				D3AB84B6254B89ED00D92339 /* SimpleCalendarView.swift */,
 				D3AB84BC254B8A7900D92339 /* SimpleCalendarViewModel.swift */,
 				D3AB84C4254B8C3200D92339 /* SimpleCalendarItem.swift */,
-				D3613E80262EFCA40045C03D /* SimpleCalendarItemState.swift */,
+				D370264C263AD863005062DE /* Day.swift */,
+				D3702640263ACB26005062DE /* SimpleCalendarEvent.swift */,
+				D3702648263AD590005062DE /* Month.swift */,
+				D370264A263AD5C9005062DE /* Year.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -118,7 +132,8 @@
 			children = (
 				D3AB84C0254B8AB600D92339 /* SimpleCalendarViewModelImpl.swift */,
 				D34F441B254B929900301336 /* SimpleCalendarItemImpl.swift */,
-				D3613E84262EFE710045C03D /* SimpleCalendarItemStateImpl.swift */,
+				D370263E263ACB02005062DE /* SimpleCalendarEventImpl.swift */,
+				D3702644263AD397005062DE /* CalendarModel.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -232,12 +247,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3613E81262EFCA40045C03D /* SimpleCalendarItemState.swift in Sources */,
+				D370264B263AD5C9005062DE /* Year.swift in Sources */,
+				D3702645263AD397005062DE /* CalendarModel.swift in Sources */,
+				D370264D263AD863005062DE /* Day.swift in Sources */,
 				D3AB84BD254B8A7900D92339 /* SimpleCalendarViewModel.swift in Sources */,
+				D3702641263ACB26005062DE /* SimpleCalendarEvent.swift in Sources */,
+				D370264F263AD883005062DE /* SimpleCalendar.swift in Sources */,
+				D370263F263ACB02005062DE /* SimpleCalendarEventImpl.swift in Sources */,
 				D3AB84C1254B8AB600D92339 /* SimpleCalendarViewModelImpl.swift in Sources */,
 				D3AB84B7254B89ED00D92339 /* SimpleCalendarView.swift in Sources */,
+				D3702649263AD590005062DE /* Month.swift in Sources */,
 				D3AB84C5254B8C3200D92339 /* SimpleCalendarItem.swift in Sources */,
-				D3613E85262EFE710045C03D /* SimpleCalendarItemStateImpl.swift in Sources */,
 				D34F441C254B929900301336 /* SimpleCalendarItemImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,29 +10,16 @@ import SwiftUI
 import Combine
 
 class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
+    
+    typealias Item = SimpleCalendarItemImpl
+    
     @Published var columnCount: Int
+    @Published var shouldBeyondMonth: Bool
+    @Published var days: [Item]
     
-    private let calendar: Calendar = .init(identifier: .gregorian)
+    private let model: CalendarModel = CalendarModel()
     
-    @Published var heads: [SimpleCalendarItem] = (0...6).map { index in
-        let current = Date()
-        let calendar = Calendar(identifier: .gregorian)
-        var components = calendar.dateComponents([.year, .month, .day], from: current)
-        var day = components.day ?? 0
-        day = day + index
-        components.day = day
-        let date = calendar.date(byAdding: components, to: current) ?? current
-        return SimpleCalendarItemImpl(
-            state: SimpleCalendarItemStateImpl(
-                date: date,
-                isSelected: index == 0,
-                isToday: false
-            ),
-            date: date,
-            text: "\(index)",
-            image: nil
-        )
-    }
+    @Published var heads: [String] = ["月", "火", "水", "木", "金", "土", "日"]
     
     @Published var monthOfDisplay: Int
     @Published var yearOfDisplay: Int
@@ -41,11 +28,13 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
     
     init(
         columnCount: Int = 7,
+        shouldBeyondMonth: Bool = true,
         startDate: Date,
         endDate: Date,
         initialPositionDate: Date
     ) {
         self.columnCount = columnCount
+        self.shouldBeyondMonth = shouldBeyondMonth
         self.startDate = startDate
         self.endDate = endDate
         let calendar = Calendar(identifier: .gregorian)
@@ -53,5 +42,8 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
         
         monthOfDisplay = components.month ?? 1
         yearOfDisplay = components.year ?? 2020
+        
+        // TODO: insert all days of initialPositionDate's month.
+        days = []
     }
 }

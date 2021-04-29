@@ -10,8 +10,13 @@ import SwiftUI
 import Combine
 
 struct SimpleCalendarItemImpl: SimpleCalendarItem {
-    var state: SimpleCalendarItemState
-    var date: Date
+    
+    typealias Event = SimpleCalendarEventImpl
+    
+    var isSelected: Bool
+    var isToday: Bool
+    var events: [Event]
+    var day: Day
     var text: String
     var image: Image?
 }
