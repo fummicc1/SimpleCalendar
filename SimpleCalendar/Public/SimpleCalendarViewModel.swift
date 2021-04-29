@@ -13,6 +13,9 @@ public protocol SimpleCalendarViewModel: ObservableObject {
     
     associatedtype Item: SimpleCalendarItem
     
+    var beginWith: DayOfTheWeek { get }
+    var numberOfDaysPerWeek: Int { get }
+    var numberOfWeeks: Int { get }
     var shouldBeyondMonth: Bool { get }
     var columnCount: Int { get }
     var heads: [String] { get }

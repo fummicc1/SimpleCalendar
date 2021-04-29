@@ -13,6 +13,9 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
     
     typealias Item = SimpleCalendarItemImpl
     
+    @Published var beginWith: DayOfTheWeek
+    @Published var numberOfWeeks: Int
+    @Published var numberOfDaysPerWeek: Int
     @Published var columnCount: Int
     @Published var shouldBeyondMonth: Bool
     @Published var days: [Item]
@@ -27,12 +30,14 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
     @Published var endDate: Date
     
     init(
+        beginWith: DayOfTheWeek = DayOfTheWeek.sunday,
         columnCount: Int = 7,
         shouldBeyondMonth: Bool = true,
         startDate: Date,
         endDate: Date,
         initialPositionDate: Date
     ) {
+        self.beginWith = beginWith
         self.columnCount = columnCount
         self.shouldBeyondMonth = shouldBeyondMonth
         self.startDate = startDate
@@ -45,5 +50,9 @@ class SimpleCalendarViewModelImpl: SimpleCalendarViewModel {
         
         // TODO: insert all days of initialPositionDate's month.
         days = []
+        
+        // TODO: get accurate values from model
+        numberOfDaysPerWeek = 7
+        numberOfWeeks = 4
     }
 }
