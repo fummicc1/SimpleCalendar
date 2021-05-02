@@ -7,7 +7,4 @@
 
 import Foundation
 
-public protocol Year {
-}
-
-extension Int: Year { }
+typealias Year = Int

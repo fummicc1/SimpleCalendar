@@ -22,6 +22,7 @@
 		D3AB84BD254B8A7900D92339 /* SimpleCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB84BC254B8A7900D92339 /* SimpleCalendarViewModel.swift */; };
 		D3AB84C1254B8AB600D92339 /* SimpleCalendarViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB84C0254B8AB600D92339 /* SimpleCalendarViewModelImpl.swift */; };
 		D3AB84C5254B8C3200D92339 /* SimpleCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB84C4254B8C3200D92339 /* SimpleCalendarItem.swift */; };
+		D3F2E358263EC6AA00803A78 /* CalendarModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2E357263EC6AA00803A78 /* CalendarModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D3AB84BC254B8A7900D92339 /* SimpleCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarViewModel.swift; sourceTree = "<group>"; };
 		D3AB84C0254B8AB600D92339 /* SimpleCalendarViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarViewModelImpl.swift; sourceTree = "<group>"; };
 		D3AB84C4254B8C3200D92339 /* SimpleCalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarItem.swift; sourceTree = "<group>"; };
+		D3F2E357263EC6AA00803A78 /* CalendarModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		D3AB84A3254B896B00D92339 /* SimpleCalendarTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3F2E354263EC68300803A78 /* Internal */,
 				D3AB84A4254B896B00D92339 /* SimpleCalendarTests.swift */,
 				D3AB84A6254B896B00D92339 /* Info.plist */,
 			);
@@ -134,6 +137,14 @@
 				D34F441B254B929900301336 /* SimpleCalendarItemImpl.swift */,
 				D370263E263ACB02005062DE /* SimpleCalendarEventImpl.swift */,
 				D3702644263AD397005062DE /* CalendarModel.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		D3F2E354263EC68300803A78 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				D3F2E357263EC6AA00803A78 /* CalendarModelTests.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3AB84A5254B896B00D92339 /* SimpleCalendarTests.swift in Sources */,
+				D3F2E358263EC6AA00803A78 /* CalendarModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

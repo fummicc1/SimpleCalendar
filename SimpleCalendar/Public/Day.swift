@@ -13,7 +13,7 @@ public struct Day {
     var month: Month
 }
 
-public enum DayOfTheWeek {
+public enum DayOfTheWeek: Int {
     case sunday
     case monday
     case tuesday
