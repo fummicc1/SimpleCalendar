@@ -15,11 +15,13 @@ public class CalendarModel {
     
     private var calendar: Calendar
     
+    private(set) public var events: [SimpleCalendarEvent] = []
+    
     init(calendar: Calendar = Calendar.autoupdatingCurrent) {
         self.calendar = calendar
     }
     
-    func getFirstDateOfMonth(monthOfTheYear: MonthOfTheYear, year: Year) throws -> Date {
+    func getFirstDateInMonth(monthOfTheYear: MonthOfTheYear, year: Year) throws -> Date {
         var dateComponents = DateComponents()
         dateComponents.year = year
         dateComponents.month = monthOfTheYear.number
@@ -30,7 +32,11 @@ public class CalendarModel {
         return firstDate
     }
     
-    func getDaysOfMonth(month: Month) throws -> [Day] {
+    func getItems(of month: Month, daysPerWeek: Int = 7, weeks: Int) throws -> [SimpleCalendarItemImpl] {
+        []
+    }
+    
+    func getDays(of month: Month) throws -> [Day] {
         let firstDate = month.firstDateOfMonth
         
         var dateComponents = calendar.dateComponents([.year, .month, .day], from: firstDate)
@@ -56,8 +62,53 @@ public class CalendarModel {
         return days
     }
     
-    func getNumberOfDaysInMonth(month: Month) -> Int {
+    func getNumberOfDays(in month: Month) -> Int {
         let range = calendar.range(of: .day, in: .month, for: month.firstDateOfMonth)
         return range?.count ?? 0
+    }
+    
+    func forward(from base: Month) -> Month {
+        var next = base
+        let currentFirstDate = base.firstDateOfMonth
+        var component = calendar.dateComponents([.year, .month, .day], from: currentFirstDate)
+        component.month? += 1
+        if let nextFirstDate = component.date, let month = component.month, let year = component.year {
+            next.firstDateOfMonth = nextFirstDate
+            next.monthOfTheYear = MonthOfTheYear(rawValue: month - 1)!
+            next.year = year
+        }
+        return next
+    }
+    
+    func backward(from base: Month) -> Month {
+        var next = base
+        let currentFirstDate = base.firstDateOfMonth
+        var component = calendar.dateComponents([.year, .month, .day], from: currentFirstDate)
+        component.month? -= 1
+        if let nextFirstDate = component.date, let month = component.month, let year = component.year {
+            next.firstDateOfMonth = nextFirstDate
+            next.monthOfTheYear = MonthOfTheYear(rawValue: month - 1)!
+            next.year = year
+        }
+        return next
+    }
+    
+    func convert(
+        date: Date,
+        calendar: Calendar = .autoupdatingCurrent
+    ) throws -> Day {
+        let component = calendar.dateComponents([.year, .month, .day, .weekday], from: date)
+        guard let weekDayNum = component.weekday,
+              let monthNum = component.month,
+              let yearNum = component.year else {
+            fatalError("Maybe Invalid Date")
+        }
+        let year: Year = yearNum
+        let monthOfTheYear = MonthOfTheYear(rawValue: monthNum - 1)!
+        let firstDate = try getFirstDateInMonth(monthOfTheYear: monthOfTheYear, year: year)
+        let month = Month(firstDateOfMonth: firstDate, monthOfTheYear: monthOfTheYear, year: year)
+        let day = Day(date: date, dayOfTheWeek: DayOfTheWeek(rawValue: weekDayNum - 1)!, month: month)
+        
+        return day
     }
 }
